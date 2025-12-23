@@ -13,6 +13,9 @@ const mongoUrl = process.env.MONGOURL;
 
 mongoose.connect(mongoUrl).then(() => {
     console.log("Connected to MongoDB!")
+    app.listen(3000, () => {
+        console.log("Server is running on port 3000!");
+    });
 }).catch((err) => {
     console.log(err);
 });
@@ -25,9 +28,11 @@ app.use(express.json());
 
 app.use(cookieParser());
 
+/*
 app.listen(3000, () => {
     console.log("Server is running on port 3000!");
 });
+*/
 
 // app.use(express.urlencoded({
 //     extended: true
